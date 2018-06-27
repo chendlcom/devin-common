@@ -8,6 +8,6 @@
 - HessianUtil
 - JsonUtil
 - ObjectUtil
-- RestApiUtil *支持各种Http Method、Content-Type的Http Client工具类*
+- RestApiUtil *支持各种Http Method、Content-Type的Http Client工具类; 支持代理、SSL*
   >具体用法可参看RestApiUtilTest测试类。RestApiUtilTest是基于Springboot的测试类，可直接Junt Test运行，无需启动WEB服务
 - StringUtil
