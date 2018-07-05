@@ -80,6 +80,15 @@ public class ApiController {
         return rst.toSuccess("OK");
     }
 
+    @RequestMapping(value = "/testapplicationjsonc", method = {RequestMethod.POST})
+    public BizResult testApplicationJsonc(@RequestBody List<String> list) {
+        BizResult rst = new BizResult();
+        rst.xPut("testMsg", "Test RestfulAPI");
+        rst.xPut("src", list);
+
+        return rst.toSuccess("OK");
+    }
+
     @RequestMapping(
         value = "/testoctetstream",
         method = {RequestMethod.POST},

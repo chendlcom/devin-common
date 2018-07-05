@@ -105,6 +105,20 @@ public class RestApiUtilTest {
     }
 
     @Test
+    public void testapplicationjsonc() throws Exception {
+        String url = "http://localhost:8090/api/testapplicationjsonc";
+        String rsp = RestApiUtil.newInstance(url).asPost()
+            .setContentType(HttpContentType.APPLICATION_JSON)
+            .setPostPojo(ArrayUtil.asStrList("aa", "bb"))
+            .getResponseString();
+        showLog(rsp);
+        BizResult rst = JSONObject.parseObject(rsp, BizResult.class);
+
+        assertTrue(rst.isSuccess());
+        assertEquals("aa", rst.getJSONArray("src").getString(0));
+    }
+
+    @Test
     public void testoctetstream() throws Exception {
         String url = "http://localhost:8090/api/testoctetstream";
         TestPojo testPojo = new TestPojo();
